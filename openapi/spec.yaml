@@ -36,6 +36,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/word-message'
+  
 components:
   schemas:
     word-message:
@@ -53,4 +54,5 @@ components:
           type: integer
           description: No's of words that I have
           example: 46       
+           
 

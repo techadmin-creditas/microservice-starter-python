@@ -6,11 +6,11 @@ The routing for this controller is handled by the OpenAPI sepecification file.
 """
 
 import logging
-from models.sample_model import new_word_response
-from services.word_service import word_service
+from ..models.sample_model import new_word_response
+from ..services.word_service import word_service
 
 
-async def get_word(word: str) -> new_word_response:
+def get_word(word: str) -> new_word_response:
     """Get more information about the given word
 
     Args:
