@@ -4,6 +4,7 @@ This module represents a sample Servcie class
 
 
 from ..models.sample_model import new_word_response
+from typing import Tuple
 
 word_list = []
 
