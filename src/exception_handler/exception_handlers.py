@@ -2,10 +2,7 @@
 This module contains the various exception handlers
 """
 
-
-
 import logging
-
 
 def not_found_handler(error):
     logging.info("exception_handler" + str(error))
@@ -27,6 +24,7 @@ def bad_request_handler(error):
 
 
 def internal_server_handler(error):
+    logging.info("exception_handler" + str(error))
     return {
         "error_code": 'SRVX400',
         "message": "BadRequest",

@@ -25,8 +25,12 @@ options = {
     }
 }
 
-exception_codes = [401,403,405,500]
-
+exception_codes = {
+    401 : "Unauthorized",
+    403 : "Forbidden",
+    405 : "Method Not Allowed",
+    500 : "Internal Server Error"
+}
 
 if __name__ == '__main__':
     """
@@ -43,7 +47,7 @@ if __name__ == '__main__':
     app.add_error_handler(exceptions.NotFoundException, exception_handlers.not_found_handler)
     app.add_error_handler(exceptions.BadRequestException, exception_handlers.bad_request_handler)
 
-    for i in exception_codes:
+    for i in exception_codes.keys():
         app.add_error_handler(i, exception_handlers.internal_server_handler)
 
 

@@ -8,7 +8,7 @@ import werkzeug.exceptions as e
 class NotFoundException(RuntimeError):
     """Not found."""
 
-class MyDataNotFound(NotFoundException):
+class NotFoundException(NotFoundException):
     error_object = {}
     def __init__(self, error_code, message, detail):
         response = {
@@ -31,7 +31,7 @@ class MyDataNotFound(NotFoundException):
 class BadRequestException(RuntimeError):
     """Bad Request"""
 
-class MyBadRequest(BadRequestException):
+class BadRequestException(BadRequestException):
     error_object = {}
     def __init__(self, error_code, message, detail):
         response = {

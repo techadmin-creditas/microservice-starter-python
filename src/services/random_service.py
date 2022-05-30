@@ -40,11 +40,11 @@ class random_service():
         # call data layer
         # counter = datalayer.....
         
-        # counter['otpSend'] =  2
-        # counter['otpValidate'] = 1
+        counter['otpSend'] =  2
+        counter['otpValidate'] = 1
         try:
             if len(counter) == 0:
-                raise ex.MyDataNotFound('NFX404', 'No data found', 'Invalid mobile')
+                raise ex.NotFoundException('NFX404', 'No data found', 'Invalid mobile')
 
             if opType == 'SendOTP':
                 return_object = otp_response(
