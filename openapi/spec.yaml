@@ -9,43 +9,6 @@ servers:
     description: localhost
 
 paths:
-  /otpcount/{operationType}:
-    get:
-      tags:
-        - OTP
-      description: Checks the otp send and validate counters
-      operationId: controllers.rnd.get_otp_count
-      parameters:
-        - in: path
-          name: operationType 
-          description: The operation type
-          required: true
-          schema:
-            type: string
-            example: SendOTP
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/otp_response'
-
-
-  /random:
-    get:
-      tags:
-        - random
-      description: Generates a random number
-      operationId: controllers.rnd.generate_random_number
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/random'
-
   /greetings/{word}:
     get:
       tags:
@@ -76,15 +39,6 @@ paths:
 
 components:
   schemas:
-
-    random:
-      type: object
-      properties:
-        number:
-          type: integer
-          description: The random generated number
-          example: 7
-
     word-message:
       type: object
       properties:
@@ -100,16 +54,3 @@ components:
           type: integer
           description: No's of words that I have
           example: 46
-          
-    otp_response:
-      type: object
-      properties:
-        count:
-          type: string
-          description: count of operation
-          example: 2
-        countRemaining:
-          type: string
-          description: count of operation remaining
-          example: 0
-
