@@ -9,8 +9,7 @@ options = {
 
 from controllers.health import health
 
-PORT = 5001
-HOST = "0.0.0.0"
+
 
 
 def get_application():
