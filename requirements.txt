@@ -29,3 +29,4 @@ urllib3==1.26.9
 uvicorn==0.17.6
 Werkzeug==2.1.2
 zope.interface==5.4.0
+uwsgi==2.0.17.1
