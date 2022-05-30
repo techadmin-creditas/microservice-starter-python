@@ -16,7 +16,7 @@ HOST = "0.0.0.0"
 
 # For more configuration https://swagger.io/docs/open-source-tools/swagger-ui/usage/configuration/
 options = {
-    "swagger_ui": True,
+    "swagger_ui": False,
     "swagger_ui_config": {
         "displayOperationId": False
     }
