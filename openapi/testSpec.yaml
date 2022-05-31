@@ -1,0 +1,35 @@
+openapi: '3.0.2'
+info:
+  title: REST Starter Kit
+  description: This is a starter kit that can be used to create microservice
+  version: '1.0.0'
+  
+servers:
+  - url: https://localhost/starterkit/v1
+    description: localhost
+
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      description: Application health check
+      operationId: api.health
+      responses:
+        '200':
+          description: Status message from server describing current health
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/health-response'
+
+  
+components:
+  schemas:
+    health-response:
+      type: object
+      properties:
+        msg:
+          type: string
+          description: Health check response
+   
