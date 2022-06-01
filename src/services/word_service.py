@@ -2,9 +2,7 @@
 This module represents a sample Servcie class
 """
 
-
-from ..models.sample_model import new_word_response
-from typing import Tuple
+from src.models.sample_model import new_word_response
 
 word_list = []
 
@@ -17,7 +15,7 @@ class word_service():
     def __init__(self) -> None:
         pass
 
-    def detail(word: str) -> Tuple[new_word_response, bool]:
+    def detail(word: str) -> tuple[new_word_response, bool]:
         """Get detail for the given word
 
         Args:

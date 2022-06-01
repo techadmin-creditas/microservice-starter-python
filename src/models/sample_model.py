@@ -1,7 +1,7 @@
 """
 This is the model for Words
 """
-from ..models.base import base_model, dataclass
+from src.models.base import base_model, dataclass
 
 
 @dataclass
