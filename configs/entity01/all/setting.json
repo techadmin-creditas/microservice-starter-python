@@ -1,0 +1,10 @@
+{
+    "otp_length": 5,
+    "verification_steps": [
+        "mobile",
+        "dob",
+        "pin",
+        "otp",
+        "special for entity01"
+    ]
+}

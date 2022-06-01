@@ -1,0 +1,14 @@
+{
+    "verification-mobile": {
+        "title": "Mobile Number",
+        "sub_heading": "Enter your mobile number in hindi"
+    },
+    "verification-dob": {
+        "title": "Date of Birth",
+        "sub_heading": "Enter your year of birth in hindi"
+    },
+    "verification-otp": {
+        "title": "OTP",
+        "sub_heading": "Enter {setting.otp_length} digit OTP in hindi"
+    }
+}

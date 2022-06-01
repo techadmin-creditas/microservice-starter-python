@@ -1,10 +1,16 @@
 version: "3.7"
 
 services:
-  starter-kit:
+  config_service:
+    container_name: configuration-service
     build:
       dockerfile: dockerfile
     ports:
       - "8080:5001"
     restart: unless-stopped
-
+    environment:
+      - config_section=feature,setting,ui
+      - config_entity=entity01
+      - config_locale=hi_in,pa_in
+    volumes:
+      - ./configs:/usr/src/configs
