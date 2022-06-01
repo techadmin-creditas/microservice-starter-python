@@ -36,7 +36,7 @@ class word_service():
         rt_obj = new_word_response(
             input=word,
             message=msg,
-            word_count= len(word_list)
+            word_count=len(word_list)
         )
 
         return rt_obj, flg

@@ -31,6 +31,9 @@ Ensure that following softwares are installed on your machine
 - Install Make: 
     > ```sudo apt install make```
 
+*Note: In case of terminal not working after installing python 3.10, open the vscode terminal and run the ```sudo apt-get --reinstall install python3-minimal``` command.*
+
+
 ## Creating Virtual Environment
 
 Python application are typically build in its own virtual environment, that allows one to control the modules and environment configuration.
@@ -108,3 +111,5 @@ Running the tests
 
 
 paused - https://connexion.readthedocs.io/en/latest/routing.html
+
+
