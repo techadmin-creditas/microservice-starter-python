@@ -13,6 +13,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY /openapi/. /usr/src/openapi
 COPY /src/. /usr/src/app
+COPY /configs/. /usr/src/configs
 
 # This just copies the sample files, share the folder as volume and copy the desired configs
 # COPY /configs/. /usr/src/configs
