@@ -1,7 +1,7 @@
 
 import logging
-from models.sample_model import bank_data_account_info_model
 from services.base_database_service import base_database_service_class
+from models.sample_model import sql_response_model
 
 
 class data_service(base_database_service_class):
@@ -17,6 +17,10 @@ class data_service(base_database_service_class):
         sqlquery = base_database_service_class.generate_sql(body, data_name)
         result = base_database_service_class.sql_execute_select(sqlquery)
         logging.info(f"result : {result}")
-        return result
+        rt_obj = sql_response_model(
+            kwargs= result[0]
+        )
+        logging.info(f"rt_obj : {rt_obj}")
+        return rt_obj
 
     

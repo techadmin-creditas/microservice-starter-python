@@ -1,5 +1,4 @@
 import logging
-from models.sample_model import bank_data_account_info_model
 from services.data_service import data_service
 
 
