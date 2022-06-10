@@ -27,3 +27,5 @@ async def get_word(word: str) -> new_word_response:
         rt_code = 201
 
     return word_detail, rt_code
+    
+    

@@ -11,7 +11,6 @@ import logging
 from controllers.health import health
 from exception_handler import exceptions, exception_handlers
 
-
 logging.basicConfig(level=logging.DEBUG)
 PORT = 5001
 HOST = "0.0.0.0"

@@ -1,56 +1,46 @@
-openapi: '3.0.2'
+openapi: "3.0.2"
 info:
-  title: REST Starter Kit
+  title: Allocation Data Service
   description: This is a starter kit that can be used to create microservice
-  version: '1.0.0'
-  
+  version: "1.0.0"
+
 servers:
-  - url: https://localhost/starterkit/v1
+  - url: https://localhost/allocation_data/v1
     description: localhost
 
 paths:
-  /greetings/{word}:
-    get:
+  /{data_name}:
+    post:
       tags:
-        - greetings
-      description: Get information about the given word
-      operationId: controllers.word_controller.get_word
+        - Get Data
+      description: Get the use from mobile
+      operationId: controllers.data_controller.getUser
       parameters:
         - in: path
-          name: word
-          description: Give me some word, I want to learn
+          name: data_name
+          description: Data Name to be querried
           required: true
           schema:
             type: string
-          example: 'One'
+          example: bank_data
+      requestBody:
+        description: Query the database
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/query_request"
+
       responses:
-        '200':
-          description: OK
+        "200":
+          description: User data
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/word-message'
-        '201':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/word-message'
+                type: object
 
 components:
   schemas:
-    word-message:
+    query_request:
+      description: "Query data attributes"
       type: object
-      properties:
-        input:
-          type: string
-          description: Word entered by user
-          example: 201301
-        message:
-          type: string
-          description: Message from computer
-          example: 'Hi there how are you'
-        word_count:
-          type: integer
-          description: No's of words that I have
-          example: 46

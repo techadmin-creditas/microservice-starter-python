@@ -19,3 +19,18 @@ class new_word_response(base_model):
         self.input = kwargs.get("input", "")
         self.message = kwargs.get("message", "")
         self.word_count = kwargs.get("word_count", 0)
+
+
+@dataclass
+class bank_data_account_info_model:
+    """
+    This class reps the account info from bank data table
+    """
+
+    fullName: str = ""
+    accountNumber: str = ""
+
+    def __init__(self, **kwargs) -> None:
+        super().__init__()
+        self.accountNumber = kwargs.get("accountNumber")
+        self.fullName = kwargs.get("fullName")
