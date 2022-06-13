@@ -1,15 +1,14 @@
 # Introduction 
-Starter-Kit to build REST based Microservice using Python and Flask framework.
+This servcie provides access to static configuration based on:
+- Section and key - The section to be fetched with optional key
+- Entity (company_id) - The default or the specified entity as header attribute 'entity'
+- Language - The default or specified locale in the header 'accept-language'
 
-The starter pack has following features:
-1. Flask framework to build REST API with async
-2. Integrated with Open API 3.x using connexion framework.
-3. Three Layer arcticture within the microservice i.e. 
-    - Controller
-    - Service
-    - Basic DAO/providers 
-4. Common REST Middleware for Logging, tracing and exception handling.
-5. Hosted as a contanarised application.
+```curl
+curl --location --request GET 'http://localhost:5001/configuration/v1/ui/verification-otp' \
+--header 'entity: entity01' \
+--header 'accept-language: hi_in'
+```
 
 # Setup & Configuration
 
@@ -56,15 +55,15 @@ To launch the service locally you can use the following command
 
 - Run the application 
     > ```python .\src\app.py```
-- URL to open Swagger UI - http://localhost:5001/starterkit/v1/ui/
+- URL to open Swagger UI - http://localhost:5001/configuration/v1/ui/
 - To open the health Url - http://localhost:5001/health
 
 ## Run Service on Docker
 Follow the steps below to create and run as a container
 
 - You can use docker-compose to build and run the application
-    > ```docker compose -p Starter-Kit -f .\docker-compose.yaml up -d```
-- URL to open the Swagger UI - http://localhost:8080/starterkit/v1/ui/
+    > ```docker compose -p Configuration -f .\docker-compose.yaml up -d```
+- URL to open the Swagger UI - http://localhost:8080/configuration/v1/ui/
 - To open the health Url - http://localhost:8080/health
 
 
@@ -89,22 +88,3 @@ pip install -r .\test-requirements.txt
 Running the tests
 - Unit test - ```pytest .\tests\unit\```
 - Component test - ```pytest .\tests\component\```
-
-
-# Links to Read
-- Install Python 3.10 on ubuntu [how to](https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/)
-- Connexion CLI - https://connexion.readthedocs.io/en/latest/cli.html
-- Data Classes - https://docs.python.org/3.10/library/dataclasses.html#dataclasses.dataclass
-
-
-# ToDo
-- Error handling
-    open api spec's.
-    override & custom error.\
-- Spinx doc
-- Unit test & Component test
-- Connect to data layer
-- configuration file
-
-
-paused - https://connexion.readthedocs.io/en/latest/routing.html

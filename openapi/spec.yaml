@@ -1,56 +1,93 @@
 openapi: '3.0.2'
 info:
-  title: REST Starter Kit
-  description: This is a starter kit that can be used to create microservice
+  title: Configuration Service
+  description: This is a configuration service, providing settings for the application to work
   version: '1.0.0'
   
 servers:
-  - url: https://localhost/starterkit/v1
+  - url: https://localhost/configuration/v1
     description: localhost
 
 paths:
-  /greetings/{word}:
+  /{section}:
     get:
       tags:
-        - greetings
-      description: Get information about the given word
-      operationId: controllers.word_controller.get_word
+        - config
+      description: Get configuration for given section
+      operationId: controllers.configuration_controller.get_section
       parameters:
         - in: path
-          name: word
-          description: Give me some word, I want to learn
+          name: section
+          description: Give section name
           required: true
           schema:
             type: string
-          example: 'One'
+          example: features
+        - in: header
+          name: 'entity'
+          description: Company name
+          required: false
+          schema: 
+            type: string
+          example: default
+        - in: header
+          name: 'accept_language'
+          description: Language code
+          required: false
+          schema:
+            type: string
+          example: en-in
       responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/word-message'
         '201':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/word-message'
-components:
-  schemas:
-    word-message:
-      type: object
-      properties:
-        input:
-          type: string
-          description: Word entered by user
-          example: 201301
-        message:
-          type: string
-          description: Message from computer
-          example: 'Hi there how are you'
-        word_count:
-          type: integer
-          description: No's of words that I have
-          example: 46       
+                type: object  
+        '204':
+          description: No Content
+  /{section}/{key}:
+    get:
+      tags:
+        - config
+      description: Get configuration for given section and key
+      operationId: controllers.configuration_controller.get_section_key
+      parameters:
+        - in: path
+          name: section
+          description: Give section name
+          required: true
+          schema:
+            type: string
+          example: 'features'
+        - in: path
+          name: key
+          description: Give key name
+          required: true
+          schema:
+            type: string
+          example: 'basic'
+        - in: header
+          name: 'entity'
+          description: Company name
+          required: false
+          schema: 
+            type: string
+          example: default
+        - in: header
+          name: 'accept_language'
+          description: Language code
+          required: false
+          schema:
+            type: string
+          example: en_in
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object  
+        '204':
+          description: No Content
 

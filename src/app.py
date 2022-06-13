@@ -1,5 +1,5 @@
 """
-This is the starter app to launch the microservice application
+This is to launch the microservice application
 
 Example:
     To launch the application, use python ./src/app.py

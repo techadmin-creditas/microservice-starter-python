@@ -1,0 +1,9 @@
+{
+    "otp_length": 5,
+    "verification_steps": [
+        "mobile",
+        "dob",
+        "pin",
+        "otp"
+    ]
+}

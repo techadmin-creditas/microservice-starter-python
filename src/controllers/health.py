@@ -7,6 +7,9 @@ directly with Flask
 Example:
     To open the end-point 'http://<host>:<port>/health'
 """
+from flask import request
+from services import configuration_service as cs
+
 
 def health():
     """
@@ -15,4 +18,9 @@ def health():
     Returns:
         Ok response
     """
-    return {'msg': 'ok'}, 200
+    # Get cached information
+    configs = cs.get_config_info()
+    return {
+        'host': request.host_url,
+        'cache_state': configs
+    }, 200
